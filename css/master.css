@@ -270,6 +270,11 @@ html {
     border-radius: 40%;
     animation: logoMoving 3s ease-in infinite forwards alternate;
 }
+@media (max-width:767px) {
+  .header-area .logo img {
+    animation: none;
+  }
+}
 @keyframes logoMoving {
     100% {
         transform: rotatey(180deg);
