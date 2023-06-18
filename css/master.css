@@ -50,10 +50,30 @@ html {
     background-color: #fff;
     transition: var(--transition);
 }
+.setting-container {
+  height: 10px !important;
+
+}
 .settings-box.open {
     left: 0;
-    border-radius: 10px;
-    box-shadow: 0 5px 10px #fff;
+    top: 45%;
+    border-radius: 20px;
+    box-shadow: 0 0px 5px #626262;
+    animation: opens .6s linear;
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+@keyframes opens {
+  10% {
+    opacity: 0;
+    transform: scale(0.2);
+  }
+}
+@media (max-width :767px) {
+  .settings-box.open {
+    top: 0;
+  }
 }
 .settings-box .toggle-settings {
     position: absolute;
@@ -133,7 +153,7 @@ html {
     border-radius: 8px;
     opacity: .5;
     box-shadow: 0 5px 10px var(--main-color);
-    transition: .5s;
+    transition: .2s;
 }.option-box .yes:hover,
 .option-box .no:hover {
     scale: 1.1;
@@ -152,10 +172,7 @@ html {
     padding: 10px;
     border-radius: 10px;
     cursor: pointer;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translatex(-50%);
+
 }
 
 /* end settings box  */
@@ -286,7 +303,7 @@ html {
     margin-left: 10px;
     color: white;
     text-decoration: none;
-    transition: 1s;
+    transition: .6s;
 
 }
 .header-area .links li a{
@@ -346,16 +363,23 @@ html {
         display: none;
     }
     .header-area .links.open {
-    background-color: rgb(0, 0, 0,0.8);
+    background-color: rgb(0, 0, 0,0.9);
     padding: 20px;
     display: block;
     position: absolute;
     right: 0px;
     top: 50px;
     width: 100%;
-    border-radius: 8px;
-    box-shadow: rgb(255, 255, 255) 0px 0px 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #000;
     text-align: left;
+    animation: opened .6s linear;
+    }
+    @keyframes opened {
+      0%,20%{
+        scale: 0;
+        transform: translatey(-100%);
+      }
     }
     .header-area .links.open li{
     display: block;
@@ -402,7 +426,7 @@ html {
     
 }
 .about-us .info-box h2{
-    color: var(--main-color);
+    color: #1C8BDC;
     font-weight: bold;
     font-size: 40px;
     margin: 0 0 10px;
@@ -1027,13 +1051,12 @@ section .cont-container {
     height: 550px;
     display: flex;
     z-index: 999;
-
 }
 section .cont-container .contact-info {
     position: absolute;
     top: 40px;
     width: 350px;
-    height: calc((100%-80px));
+    height: calc((100%-30px));
     background: var(--main-color);
     z-index: 1;
     padding: 40px;
@@ -1045,7 +1068,7 @@ section .cont-container .contact-info {
 }
 @media(max-width:767px) {
     section .cont-container .contact-info {
-    width: 80%;
+    display: none;
     }
 }
 
@@ -1136,7 +1159,7 @@ section .cont-container .conatat-form {
 }
 @media (max-width:767px) {
     section .cont-container .conatat-form {
-        top:600px;
+        top:0;
         left:0;
         position: relative;
         margin: -20px 10px -30px ;
@@ -1253,10 +1276,7 @@ section .cont-container .conatat-form {
     grid-template-columns: minmax(200px, 1fr);
     margin-left: 10px;
     margin-right: 10px;
-    top: 450px;
     position: relative;
-    margin-bottom: 500px;
-
 }
 .plans-page.plan:last-child {
     margin-top: 100px;
